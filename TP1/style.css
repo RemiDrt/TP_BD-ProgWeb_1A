@@ -1,0 +1,12 @@
+h1 {
+    color: #58acfa;
+}
+i {
+    color: red;
+}
+a:hover {
+    color: cyan;
+}
+table {
+    border:2px solid grey;
+}
