@@ -22,3 +22,10 @@ video {
     height: 360;
     width: auto;
 }
+header {
+    text-align: center;
+    background-color: burlywood;
+}
+nav {
+    display: flex;
+}
