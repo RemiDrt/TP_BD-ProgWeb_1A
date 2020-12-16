@@ -30,10 +30,7 @@ class ClientRepository {
   function findClientById(int $id) {
     $sql = 
 <<<SQL
-  SELECT 
-
-  /*à compléter*/
-
+  SELECT * from client where num_client = :id;
 SQL;
 
 
