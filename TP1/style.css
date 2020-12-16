@@ -10,3 +10,15 @@ a:hover {
 table {
     border:2px solid grey;
 }
+.sigle {
+    font-size: 5em;
+    color: brown;
+}
+th {
+    font-style: oblique;
+    border: solid pink 2px;
+}
+video {
+    height: 360;
+    width: auto;
+}
