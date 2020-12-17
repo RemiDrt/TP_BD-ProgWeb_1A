@@ -24,5 +24,21 @@ else{
 	if($choixMenu == "v"){
 		include_once '../src/View/template.php';
 		loadView('client', $data);
+		var_dump($data);
+	}
+	if($choixMenu == "m") {
+		include_once '../src/View/template.php';
+		loadView('client', $data);
+		var_dump($data);
+	}
+	if($choixMenu == "c") {
+		include_once '../src/View/template.php';
+		loadView('client', $data);
+		var_dump($data);
+	}
+	if($choixMenu == "a") {
+		include_once '../src/View/template.php';
+		loadView('client', $data);
+		var_dump($data);
 	}
 }
