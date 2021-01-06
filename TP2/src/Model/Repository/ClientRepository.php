@@ -44,6 +44,43 @@ SQL;
     return $clients;
   }
 
+  function updateClientById($id, $nom_client, $debit_client) {
+    $sql = 'UPDATE client SET ';
+    if (isset($nom_client) && $nom_client != '') {
+      $sql = $sql.'nom_client = :nom_client ';
+      if(isset($debit_client) && $debit_client != '') {
+        $sql = $sql.', debit_client = :debit_client ';
+      }
+    }
+    else if(isset($debit_client) && $debit_client != '') {
+      $sql = $sql.'debit_client = :debit_client ';
+    }
+    $sql = $sql.'WHERE num_client = :id ;';
+    $req = $this->dbAdapter->prepare($sql);
+    $req->bindValue(':id', $id, \PDO::PARAM_INT);
+    if(isset($debit_client) && $debit_client != '') {
+      $req->bindValue(':debit_client', $debit_client, \PDO::PARAM_INT);
+    }
+    if(isset($nom_client) && $nom_client != '') {
+      $req->bindValue(':nom_client', $nom_client, \PDO::PARAM_STR);
+    }
+    $req->execute();
+    return $req->fetchAll();
+  }
+
+  function addClient($id, $nom, $debit){
+    $sql = 
+<<<SQL
+  INSERT INTO client VALUES (:id , :nom , :debit );
+SQL;
+    $req = $this->dbAdapter->prepare($sql);
+    $req->bindValue(':id', $id, \PDO::PARAM_INT);
+    $req->bindValue(':nom', $nom, \PDO::PARAM_STR);
+    $req->bindValue(':debit', $debit, \PDO::PARAM_INT);
+    $req->execute();
+    return $req;
+  }
+
 }
 
 

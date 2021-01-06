@@ -28,12 +28,12 @@ else{
 	}
 	if($choixMenu == "m") {
 		include_once '../src/View/template.php';
-		loadView('client', $data);
+		loadView('modification', $data);
 		var_dump($data);
 	}
 	if($choixMenu == "c") {
 		include_once '../src/View/template.php';
-		loadView('client', $data);
+		loadView('creation', $data);
 		var_dump($data);
 	}
 	if($choixMenu == "a") {
