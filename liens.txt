@@ -1,0 +1,3 @@
+site : http://pgsql.pedago.ensiie.fr/~prenom.nom/chemin
+ssh : prenom.nom@pedago-etu.ensiie.fr
+excel des sites : cf discord
