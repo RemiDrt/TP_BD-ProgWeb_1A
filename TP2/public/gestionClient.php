@@ -38,7 +38,7 @@ else{
 	}
 	if($choixMenu == "a") {
 		include_once '../src/View/template.php';
-		loadView('client', $data);
+		loadView('achat', $data);
 		var_dump($data);
 	}
 }

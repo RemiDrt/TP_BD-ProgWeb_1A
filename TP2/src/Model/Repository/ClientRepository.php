@@ -81,6 +81,34 @@ SQL;
     return $req;
   }
 
+  function addPurchase($num_achat, $montant_achat, $date_achat, $num_client){
+    $sql = 
+<<<SQL
+  INSERT INTO achat VALUES ( :num_achat , :montant_achat , :date_achat , :num_client ) ;
+SQL;
+    $req = $this->dbAdapter->prepare($sql);
+    $req->bindValue(':num_achat', $num_achat, \PDO::PARAM_INT);
+    $req->bindValue(':montant_achat', $montant_achat, \PDO::PARAM_INT);
+    $req->bindValue(':date_achat', $date_achat, \PDO::PARAM_STR);
+    $req->bindValue(':num_client', $num_client, \PDO::PARAM_INT);
+    $req->execute();
+    return $req;
+  }
+
+  function changeDebit($id, $montant) {
+    $sql = 
+<<<SQL
+  UPDATE client 
+    SET debit_client = :montant
+    WHERE num_client = :id ;
+SQL;
+    $req = $this->dbAdapter->prepare($sql);
+    $req->bindValue(':montant', $montant, \PDO::PARAM_INT);
+    $req->bindValue(':id', $id, \PDO::PARAM_INT); 
+    $req->execute();
+    return $req;
+  }
+
 }
 
 

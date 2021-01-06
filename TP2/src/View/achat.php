@@ -15,17 +15,17 @@
     <?php endforeach; ?>
 </div>
 
-<form action="ajoutClient.php" method="post">
-  
+<form action="ajoutAchat.php" method="post">
 
   <fieldset>
   <legend>Choix:</legend>
-    <label for="idClient">Numéros :</label>
-    <input type="number" name="idClient" id="idClient" required="required"><br>
-    <label for="nom_client">Nom :</label>
-    <input type="texte" id="nom_client" name="nom_client" required="required"><br>
-    <label for="m">Crédit :</label>
-    <input type="number" id="debit_client" name="debit_client" required="required"><br>
+    <label for="num_achat">Numéros d'achat :</label>
+    <input type="number" id="num_achat" name="num_achat" required="required"><br>
+    <input type="hidden" name="idClient" id="idClient" value="<?php echo $client->getId(); ?>"><br>
+    <label for="montant_achat">Montant achat :</label>
+    <input type="number" id="montant_achat" name="montant_achat" required="required"><br>
+    <label for="date">Date :</label>
+    <input type="date" id="date_achat" name="date_achat" required="required"><br>
   </fieldset>
   <button type="submit">Envoyer</button>
 </form>
