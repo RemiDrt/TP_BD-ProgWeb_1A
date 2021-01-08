@@ -16,7 +16,7 @@ function sol1() {
 	try {
 		$pdo = connect();
 	// requete avec jointure et double boucle
-		$sql = 'SELECT * FROM SERVICE WHERE num_service = 1 ;'
+		$sql = 'SELECT * FROM SERVICE WHERE num_service = 1 ;';
 		$req = $pdo->prepare($sql);
 		$req->execute();
 		var_dump($req->fetchAll())
