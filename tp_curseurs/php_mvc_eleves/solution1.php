@@ -1,5 +1,4 @@
 <?php
-echo 'test';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -16,10 +15,16 @@ function sol1() {
 	try {
 		$pdo = connect();
 	// requete avec jointure et double boucle
-		$sql = 'SELECT * FROM SERVICE WHERE num_service = 1 ;';
+		$sql = 'SELECT * FROM EMPLOYE NATURAL JOIN SERVICE ODER BY  ;';
 		$req = $pdo->prepare($sql);
 		$req->execute();
-		var_dump($req->fetchAll())
+		$employes = $req->fetchAll();
+		$i = 0;
+		foreach($employes as $employe){
+			echo $i;
+			var_dump($employe);
+			$i = $i + 1;
+		}
 	}
 	catch (PDOException $e) {
    		print "Erreur !: " . $e->getMessage() . "<br/>";
